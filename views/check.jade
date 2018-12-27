@@ -1,0 +1,35 @@
+extends ./layout
+append head
+block content
+  h2.display-data All Tapes
+    a.btn.btn-primary.pull-right(href="/tapes/create") Create a new Tape
+  //table.table.table-bordered.table-striped(style="width:100%")
+  table.table.tablesorter.table-bordered
+    thead
+      tr
+        th Name
+        th Label
+        th Created
+        th Expires
+        th Type
+        th Status
+        th.last
+    tbody
+      each tape in tapes
+        tr
+          td= display(tape.name)
+          td= display(tape.label)
+          td= display(tape.created)
+          td= display(tape.expires)
+          td= display(tape.type)
+          td= display(tape.status)
+  
+          td
+            a(href="/tapes/" + tape._id + "/detail", title="Detail")
+              i.icon-zoom-in
+            | 
+            a(href="/tapes/" + tape._id + "/edit", title="Edit")
+              i.icon-edit
+            | 
+            a(href="/tapes/" + tape._id + "/delete", title="Delete")
+              i.icon-remove

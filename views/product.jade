@@ -1,0 +1,20 @@
+extends layout
+
+block content
+ h3 PRODUCT DETAILS
+ div
+   table.table.table-responsive.table-hover.table-bordered.table-striped
+    thead
+      tr
+       th NAME
+       th DESCRIPTION
+       th PRICE
+       th QUANTITY
+    tbody
+      each p in products
+        tr
+          td=p.productName
+          td=p.productDescription
+          td=p.price
+          td=p.quantity
+

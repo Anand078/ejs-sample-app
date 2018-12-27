@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p Hello World
+  - var a = 12
+  p value is #{a}
+  if a
+   p the value of a is #{a}
+  - var htmlData = "<h1>This is Anand</h1>"
+  value is !{htmlData}
+  ul
+   li this is ui tag 
+   li this is li tag
+   
